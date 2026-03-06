@@ -44,6 +44,7 @@ android {
 }
 
 dependencies {
+    implementation(libs.androidx.constraintlayout)
     val roomVersion = rootProject.ext["roomVersion"] as String
     implementation("androidx.room:room-runtime:${roomVersion}")
     kapt("androidx.room:room-compiler:$roomVersion")
