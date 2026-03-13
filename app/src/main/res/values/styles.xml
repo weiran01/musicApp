@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="theme_app" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <item name="android:textColorPrimary">@color/black</item>
+        <item name="android:textColorSecondary">@color/white</item>
+        <item name="android:textSize">30dp</item>
+    </style>
+
+    <style name="Button" parent="Widget.AppCompat.Button">
+        <item name="android:layout_width">175dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:background">@color/blue</item>
+        <item name="android:textSize">15dp</item>
+    </style>
+
+    <style name="btn_action" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/btn_circle_action</item>
+    </style>
+    
+    <style name="btn_more" parent="Widget.AppCompat.Button">
+        <item name="android:src">@drawable/btn_more</item>
+    </style>
+
+    <style name="App.Text.Title" parent="TextAppearance.AppCompat.Large">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_margin">8dp</item>
+    </style>
+</resources>

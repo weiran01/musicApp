@@ -4,6 +4,6 @@ plugins {
     alias(libs.plugins.kotlin.android) apply false
     alias(libs.plugins.kotlin.compose) apply false
 }
-
-val roomVersion = "2.6.1"
-ext["roomVersion"] = roomVersion
+ext {
+    set("roomVersion", "2.6.1")
+}
