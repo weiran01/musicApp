@@ -33,13 +33,13 @@ abstract class BaseFragment : Fragment() {
 
     protected open fun initListener() {}
 
-    protected fun showToast(msg: String) {
+    fun showToast(msg: String) {
         activity?.let { context->
             Toast.makeText(context, msg, Toast.LENGTH_SHORT).show()
         }
     }
 
-    protected fun switchFragment(targetFragment: Fragment, addToBackStack: Boolean = true) {
+    fun switchFragment(targetFragment: Fragment, addToBackStack: Boolean = true) {
         (activity as BaseActivity).switchFragment(R.id.activity_main, targetFragment,addToBackStack)
     }
 

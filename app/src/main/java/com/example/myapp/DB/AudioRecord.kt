@@ -16,16 +16,18 @@ import androidx.room.ColumnInfo
         )
     ],
 )
-data class Audio(
-    @PrimaryKey(autoGenerate = true) val audioId: Int = 0,
+data class AudioRecord(
+    @PrimaryKey(autoGenerate = true) val id: Int = 0,
     @ColumnInfo(index = true) val userId: Int,
     val time: String,
-    val title: String
+    val title: String,
+    val audioPath: String
 ) {
-    constructor(userId: Int, time: String, title: String) : this(
-        audioId = 0,
+    constructor(userId: Int, time: String, title: String, audioPath: String) : this(
+        id = 0,
         userId = userId,
         time = time,
-        title = title
+        title = title,
+        audioPath = audioPath
     )
 }

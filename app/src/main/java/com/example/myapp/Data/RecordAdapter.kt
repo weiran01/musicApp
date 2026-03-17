@@ -13,10 +13,14 @@ import com.example.myapp.R
 class RecordAdapter(private val data: MutableList<RecordModel>) :
     RecyclerView.Adapter<RecordAdapter.RecordViewHolder>() {
     var onItemDeleteListener: ((Int) -> Unit)? = null
+    var onItemPlayListener: ((String) -> Unit)? = null
+
+
     class RecordViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val tvListTime:TextView=itemView.findViewById(R.id.tv_list_time)
-        val tvListTitle:TextView=itemView.findViewById(R.id.tv_list_title)
+        val tvListTime: TextView = itemView.findViewById(R.id.tv_list_time)
+        val tvListTitle: TextView = itemView.findViewById(R.id.tv_list_title)
         val btnDelete: ImageButton = itemView.findViewById(R.id.delete)
+        val btnPlay: ImageButton = itemView.findViewById(R.id.play)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecordViewHolder {
@@ -30,6 +34,19 @@ class RecordAdapter(private val data: MutableList<RecordModel>) :
 
         holder.tvListTime.text = currentModel.time
         holder.tvListTitle.text = currentModel.title
+
+        holder.btnPlay.setOnClickListener {
+            if (currentModel.audioPath.isNullOrEmpty()) {
+                android.widget.Toast.makeText(
+                    holder.itemView.context,
+                    "无录音文件可播放",
+                    android.widget.Toast.LENGTH_SHORT
+                ).show()
+                return@setOnClickListener
+            }
+            // 只分发事件，不处理跳转
+            onItemPlayListener?.invoke(currentModel.audioPath!!)
+        }
 
         holder.btnDelete.setOnClickListener {
             showDeleteDialog(holder.itemView.context, position)

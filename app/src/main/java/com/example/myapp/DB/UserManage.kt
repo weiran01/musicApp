@@ -5,8 +5,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
 object UserManage{
-    private fun getUserDao(context: Context): UserDao{
-        return AppDatabase.getInstance(context).userDao()
+    fun getUserDao(context: Context): UserDao{
+        return AudioManage.getInstance(context).userDao()
     }
 
     suspend fun newUser(context: Context,username:String,password:String):Boolean{

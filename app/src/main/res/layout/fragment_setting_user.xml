@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <ImageView
+        android:id="@+id/iv_user"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:src="@drawable/iv_user"
+        android:scaleType="fitCenter"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="225dp"/>
+
+    <EditText
+        android:id="@+id/et_username"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_user"
+        android:layout_marginTop="145dp"/>
+
+    <EditText
+        android:id="@+id/et_userpwd"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:inputType="textPassword"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_username"
+        app:layout_constraintBottom_toTopOf="@id/btn_yes"
+        />
+
+    <Button
+        android:id="@+id/btn_yes"
+        style="@style/Button"
+        android:text="@string/btn_yes"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btn_delete"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="200dp"/>
+
+    <Button
+        android:id="@+id/btn_delete"
+        style="@style/Button"
+        android:text="@string/delete"
+        app:layout_constraintStart_toEndOf="@id/btn_yes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="200dp"/>
+
+    <Button
+        android:id="@+id/btn_no"
+        style="@style/Button"
+        android:text="@string/no"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="150dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,6 +10,9 @@ interface UserDao{
     @Insert
     suspend fun insertUser(users:User)
 
+    @Query("SELECT * FROM user WHERE id = :userId LIMIT 1")
+    suspend fun getUserId(userId: Int): User?
+
     @Query("SELECT COUNT(*) FROM user WHERE username = :username")
     suspend fun findUsername(username: String): Int
 

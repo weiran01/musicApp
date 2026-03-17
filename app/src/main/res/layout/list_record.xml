@@ -40,8 +40,8 @@
 
     <ImageButton
         android:id="@+id/delete"
-        android:layout_width="17dp"
-        android:layout_height="35dp"
+        android:layout_width="20dp"
+        android:layout_height="38dp"
         android:src="@drawable/iv_more"
         android:scaleType="fitCenter"
         android:background="@null"

@@ -43,20 +43,9 @@ open class BaseActivity : AppCompatActivity() {
             is ActionFragment, is MainFragment -> {
                 finish()
             }
-            is SettingRecordFragment,is RecordFragment ->{
-                // 直接弹出回退栈，回到跳转前的ActionFragment（无需新建）
-                if (supportFragmentManager.backStackEntryCount > 0) {
-                    supportFragmentManager.popBackStackImmediate()
-                } else {
-                    // 回退栈为空时，才复用/新建ActionFragment
-                    val existingActionFragment = supportFragmentManager.fragments.find { it is ActionFragment } as? ActionFragment
-                    switchFragment(R.id.activity_main, existingActionFragment ?: ActionFragment(), addToBackStack = false)
-                }
-            }
             else -> super.onBackPressed()
         }
     }
-
 
     override fun onDestroy() {
         super.onDestroy()

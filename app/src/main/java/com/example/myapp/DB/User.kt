@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
     tableName = "user",
     indices = [androidx.room.Index(value = ["username"], unique = true)])
 data class User(
-    @PrimaryKey(autoGenerate = true) val id: Int=0,
+    @PrimaryKey(autoGenerate = true) val id: Int=1,
     val username:String,
     val password:String
 ){
